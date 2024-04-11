@@ -20,6 +20,7 @@ const App = () => {
         <View style={styles.buttonContainer}>
         <Button title="Home" onPress={() => navigation.navigate('ComoEra')} />
         <Button title="Sobre" onPress={() => navigation.navigate('Mitologia')} />
+        <Button title="Home" onPress={() => navigation.navigate('Sobre')} />
         </View>
       </View>
     </ImageBackground>

@@ -3,9 +3,9 @@ import { View, StyleSheet, ImageBackground, Button } from 'react-native';
 
 const App = () => {
   return (
-    <ImageBackground source={require('./assets/comoera.png')} style={styles.background}>
+    <ImageBackground>
       <View style={styles.container}>
-        <Text>Sobre</Text>
+        <Text>Mitologia</Text>
       </View>
     </ImageBackground>
   );

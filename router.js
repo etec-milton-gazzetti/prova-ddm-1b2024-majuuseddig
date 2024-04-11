@@ -19,4 +19,4 @@ export default function Router() {
       </Stack.Navigator>
     </NavigationContainer>
   );
-}
+}  
