@@ -1,20 +1,59 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { View, Button, StyleSheet, ImageBackground, Text } from 'react-native';
 
-export default function App() {
+const App = () => {
+  const onPressComoEra = () => {
+    console.log('Botão "Como Era" pressionado');
+  };
+
+  const onPressMitologiaEgipicia = () => {
+    console.log('Botão "Mitologia Egípcia" pressionado');
+  };
+
+  const onPressSobre = () => {
+    console.log('Botão "Sobre" pressionado');
+  };
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ImageBackground source={require('./assets/egitoantigo.png')} style={styles.background}>
+      <View style={styles.container}>
+        <View style={styles.buttonContainer}>
+          <CustomButton title="Como Era" onPress={onPressComoEra} />
+          <CustomButton title="Mitologia Egípcia" onPress={onPressMitologiaEgipicia} />
+          <CustomButton title="Sobre" onPress={onPressSobre} />
+        </View>
+      </View>
+    </ImageBackground>
   );
-}
+};
+
+const CustomButton = ({ title, onPress }) => (
+  <View style={styles.button}>
+    <Button title={title} onPress={onPress} color="#055592" />
+  </View>
+);
 
 const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+    resizeMode: 'cover',
+    justifyContent: 'center',
+    width: '100%',
+    height: '100%',
+  },
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
+  },
+  buttonContainer: {
+    width: '80%',
+  },
+  button: {
+    marginVertical: 10,
+    borderRadius: 20,
+    overflow: 'hidden',
   },
 });
+
+export default App;
